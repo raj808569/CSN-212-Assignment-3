@@ -1,4 +1,6 @@
 #include<iostream>
+#include<stdlib.h>
+#include<limits.h>
 #include<stdio.h>
 using namespace std;
 struct container
@@ -26,7 +28,7 @@ void MinDistanceFromSource(const container edge_list[], int number_of_edges, int
     }
 }
 
-void PrintResult()
+void PrintResult(int number_of_vertices,int minimum_cost_array[])
 	{
 	
     cout<<"Vertex"<<" Cost For Vertex"<<endl;
@@ -48,14 +50,14 @@ cout<<"enter the starting vertex"<<endl;
 cin >>origin_vertex;
 container edge_list[number_of_edges];
 int minimum_cost_array[number_of_vertices];
-for(int i=0; i<number; i++)
+for(int i=0; i<number_of_edges; i++)
 	{
         cin>> edge_list[i].source >> edge_list[i].finalpos >> edge_list[i].cost;
     }
 
     MinDistanceFromSource(edge_list,number_of_edges,minimum_cost_array,number_of_vertices, origin_vertex);
 	
-	PrintResult();
+	PrintResult(number_of_vertices,minimum_cost_array);
     return 0;
 }
 
